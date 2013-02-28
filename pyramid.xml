@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote name="aosp"
+           fetch="https://android.googlesource.com/" />
+  <remote name="bruce"
+     fetch="https://github.com/bruce2728/" />
+  <remote name="b2g"
+          fetch="git://github.com/mozilla-b2g/" />
+  <remote name="linaro"
+           fetch="git://android.git.linaro.org/" />
+  <remote name="mozilla"
+fetch="git://github.com/mozilla/" />
+  <remote name="mozillaorg"
+      fetch="https://git.mozilla.org/releases" />
+  <default revision="refs/tags/android-4.0.4_r1.2"
+           remote="linaro"
+           sync-j="4" />
+
+  <!-- Gonk specific things and forks -->
+  <project path="build" name="platform_build" remote="b2g" revision="master">
+    <copyfile src="core/root.mk" dest="Makefile" />
+  </project>
+  <project path="dalvik" name="fake-dalvik" remote="b2g" revision="master" />
+  <project path="gaia" name="gaia.git" remote="mozillaorg" revision="master" />
+  <project path="gecko" name="gecko.git" remote="mozillaorg" revision="master" />
+  <project path="gonk-misc" name="gonk-misc" remote="b2g" revision="master" />
+  <project path="rilproxy" name="rilproxy" remote="b2g" revision="master" />
+  <project path="external/moztt" name="moztt" remote="b2g" revision="master" />
+  <project name="bruce2728/android_device_htc_msm8660-common" path="device/htc/msm8660-common" revision="ics" remote="bruce" />
+  <project name="bruce2728/android_device_htc_pyramid" path="device/htc/pyramid" revision="ics" remote="bruce" />
+  <project name="bruce2728/android_kernel_htc_pyramid" path="kernel/htc/msm8660" revision="ics" remote="bruce"/>
+  <project name="bruce2728/android_vendor_htc_pyramid" path="vendor/htc/pyramid" revision="master" remote="bruce"/>
+</manifest>
